@@ -4,7 +4,6 @@
 
 #include <avr/pgmspace.h>
 //#include <Tiny4kOLED.h>
-#include <TinyDebug.h>
 #include <Tiny4kOLED_bitbang.h>
 
 #include "map.h"
@@ -23,10 +22,6 @@ uint16_t collected = 0;
 
 void setup()
 {
-  OSCCAL = 0xFF;
-  Debug.begin();
-  Debug.println(F("Hello, TinyDebug!"));
-
   pinMode(PIN_LEFT, INPUT_PULLUP);
   pinMode(PIN_RIGHT, INPUT_PULLUP);
   pinMode(PIN_UP, INPUT_PULLUP);
@@ -155,10 +150,6 @@ void loop()
           y_frame_pos = y_player_pos - 6;
         }
       }
-
-      //Debug.print(x_player_pos);
-      //Debug.print(F(" "));
-      //Debug.println(y_player_pos);
     }
   }
 }
